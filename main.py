@@ -33,7 +33,7 @@ def encodeChanged(text):
     svd.set(encodeString(sve.get()))
 
 window = tkinter.Tk()
-window.title("GUI")
+window.title("HyperSecureEncryption")
 
 tkinter.Label(window, text = "Encode").grid(row = 0)
 sve = tkinter.StringVar()
