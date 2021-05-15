@@ -1,6 +1,8 @@
 import tkinter
 
 
+#Encoding
+
 rows = ['qwertzuiopü', 'asdfghjklöä', 'yxcvbnm']
 
 def shiftKeyboard(letter,shift):
@@ -32,19 +34,30 @@ def decodeChanged(text):
 def encodeChanged(text):
     svd.set(encodeString(sve.get()))
 
+#Window
+
 window = tkinter.Tk()
 window.title("HyperSecureEncryption")
+window.geometry("570x255")
+window.configure(bg='gray11')
 
-tkinter.Label(window, text = "Encode").grid(row = 0)
+
+tkinter.Label(window, text = "Encode", font='15').place(x=5, y=52)
 sve = tkinter.StringVar()
 sve.trace("w", lambda name, index, mode, sve=sve: encodeChanged(sve))
-encodeBox = tkinter.Entry(window, textvariable=sve)
-encodeBox.grid(row = 0, column = 1)
+encodeBox = tkinter.Entry(window, textvariable=sve, font='15')
+encodeBox.place(x = 70,
+        y = 50,
+        width=450,
+        height=30)
 
-tkinter.Label(window, text = "Decode").grid(row = 1)
+tkinter.Label(window, text = "Decode", font='15').place(x=5, y=152)
 svd = tkinter.StringVar()
 svd.trace("w", lambda name, index, mode, svd=svd: decodeChanged(svd))
-decodeBox = tkinter.Entry(window, textvariable=svd)
-decodeBox.grid(row = 1, column = 1)
+decodeBox = tkinter.Entry(window, textvariable=svd, font='15')
+decodeBox.place(x = 70,
+        y = 150,
+        width=450,
+        height=30)
 
 window.mainloop()
