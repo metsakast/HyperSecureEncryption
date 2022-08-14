@@ -3,7 +3,7 @@ import tkinter
 
 #Encoding
 
-rows = ['qwertzuiopü', 'asdfghjklöä', 'yxcvbnm']
+rows = ['qwertyuiopü', 'asdfghjklöä', 'yxcvbnm']
 
 def shiftKeyboard(letter,shift):
     isUpper = letter.isupper()
